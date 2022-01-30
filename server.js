@@ -2,15 +2,12 @@ const api = require('./Routes/api') ;
 const express = require('express');
 const cors = require('cors');
 
-
-
 const server = express();
 const PORT = process.env.PORT || 8000;
 
 server.use(cors());
 server.use(express.json());
 //server.use(api);
-
 
 
 server.listen(PORT, () => {
@@ -28,10 +25,7 @@ server.get("/cliente", async (req, res)=>{
     let Cpf = req.query.qtype
 
     try {
-
         const {data} = await  Api1.post('/cliente',{
-
-
             qtype: Cpf,
             query: Nome.replace(/ /g,'%'),
             oper: 'L',
@@ -43,8 +37,6 @@ server.get("/cliente", async (req, res)=>{
         }, {headers: {ixcsoft: "listar"}})
 
         const {data: data1} = await  Api2.post('/cliente',{
-
-
             qtype: Cpf,
             query: Nome,
             oper: 'L',
@@ -53,11 +45,7 @@ server.get("/cliente", async (req, res)=>{
             sortname: 'cliente.razao',
             sortorder: 'asc',
 
-
         }, {headers: {ixcsoft: "listar"}})
-
-
-
 
 
         //somaTotal somando os dois total das api
@@ -102,15 +90,11 @@ server.get("/cliente", async (req, res)=>{
              return 0;
         })
 
-
-
           // resultado passando novo valor para suas devidas chaves
         const resultado = {total: somaTotal, registros:result};
 
-
         // res.json return final.
         return res.json(resultado)({name: resultado.name });
-
 
     }      catch (error){
            res.send({error: error.message});
