@@ -1,4 +1,5 @@
 const api = require('./Routes/api') ;
+const api2 = require('./Routes/api2);
 const express = require('express');
 const cors = require('cors');
 
@@ -25,7 +26,7 @@ server.get("/cliente", async (req, res)=>{
     let Cpf = req.query.qtype
 
     try {
-        const {data} = await  Api1.post('/cliente',{
+        const {data} = await  Api.post('/cliente',{
             qtype: Cpf,
             query: Nome.replace(/ /g,'%'),
             oper: 'L',
