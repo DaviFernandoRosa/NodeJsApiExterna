@@ -52,7 +52,6 @@ server.get("/cliente", async (req, res)=>{
         //somaTotal somando os dois total das api
         const somaTotal = data.total + data1.total;
 
-
         // condição para procurar resultado nos dois registros
         let Date1 = data.registros;
         let Date2 = data1.registros;
