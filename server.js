@@ -73,7 +73,6 @@ server.get("/cliente", async (req, res)=>{
             }
         }
 
-
         // result está juntando as duas chaves registros das api
         const result = [...Date1, ...Date2];
 
