@@ -10,7 +10,6 @@ server.use(cors());
 server.use(express.json());
 //server.use(api);
 
-
 server.listen(PORT, () => {
     // tslint:disable-next-line:no-console
     console.log(`⚡[server]: Server rodando na Porta: ${PORT}`);
